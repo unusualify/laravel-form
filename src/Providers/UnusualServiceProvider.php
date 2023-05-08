@@ -5,7 +5,7 @@ namespace OoBook\LaravelForm\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Blade;
-
+use View;
 class UnusualServiceProvider extends ServiceProvider
 {
 
@@ -98,6 +98,7 @@ class UnusualServiceProvider extends ServiceProvider
      */
     private function includeView($view, $expression): string
     {
+        // dd($view, $expression);
         [$name] = str_getcsv($expression, ',', '\'');
 
 
@@ -119,9 +120,9 @@ class UnusualServiceProvider extends ServiceProvider
         }
 
         // dd(
-        //     $view,
-        //     $name,
-        //     file_get_contents('/var/www/b2press-payment/packages/oobook/laravel-form/src/Resources/views/inputs/_text.blade.php')
+        //     $expression,
+        //     // View::make($view, $expression),
+        //     // "\$__env->make('{$view}', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->with{$expression}->render();"
         // );
 
         return "<?php echo \$__env->make('{$view}', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->with{$expression}->render(); ?>";
@@ -143,6 +144,10 @@ class UnusualServiceProvider extends ServiceProvider
 
         $blade->directive('inputField', function ($expression) {
             return $this->includeView('inputs._', $expression);
+        });
+
+        $blade->directive('unusualForm', function ($expression) {
+            return $this->includeView('layouts._', "'form'," . $expression);
         });
 
     }
