@@ -1,3 +1,3 @@
-# laravel-form-template
+# laravel-form
 
-php artisan vendor:publish --provider="Cartalyst\Tags\TagsServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="OoBook\LaravelForm\LaravelServiceProvider" --tag="migrations"
