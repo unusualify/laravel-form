@@ -20,7 +20,7 @@ class UnusualServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        // dd('here');
         $this->loadMigrationsFrom(
             __DIR__ . '/../src/Database/Migrations'
         );
