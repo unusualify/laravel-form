@@ -141,7 +141,7 @@ class UnusualServiceProvider extends ServiceProvider
             );
         });
 
-        $blade->directive('in', function ($expression) {
+        $blade->directive('inputField', function ($expression) {
             return $this->includeView('inputs._', $expression);
         });
 
