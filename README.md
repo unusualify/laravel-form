@@ -16,3 +16,28 @@ php artisan vendor:publish --provider="OoBook\LaravelForm\LaravelServiceProvider
         ",
     ])
 ```
+
+```
+    @unusualForm([
+        'inputs' => [
+            [
+                'type' => 'text',
+                'input_name' => 'name',
+                'label' => 'Social Media Name',
+                'model' => $item,
+                'placeholder' => __('Name'),
+                'class' => '',
+                'props' => 'required autofocus',
+            ],
+            [
+                'type' => 'filepond',
+                'input_name' => 'logo',
+                'label' => 'Social Media Logo',
+                'model' => $item,
+                'placeholder' => __('Logo'),
+                'class' => '',
+                'props' => 'required autofocus',
+            ]
+        ]
+    ])
+```
