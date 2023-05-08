@@ -43,30 +43,32 @@ return {$export};
     }
 }
 
+if (!function_exists('getModelInput')) {
 
-function getModelInput(Model $model, $name, $type = null)
-{
-    // if( isset($model->id)){
+    function getModelInput(Model $model, $name, $type = null)
+    {
+        // if( isset($model->id)){
 
-    // }
+        // }
 
-    if(!isset($model->{$name}))
-        return '';
-
-    // $model->getType($name);
-    if(!$type )
-        return $model->{$name};
-
-    switch ($type) {
-        case 'date':
-            if(!isset($model->{$name})){
-                return '';
-            }
-            return $model->{$name}->format('Y-m-d');
-            break;
-
-        default:
+        if(!isset($model->{$name}))
             return '';
-            break;
+
+        // $model->getType($name);
+        if(!$type )
+            return $model->{$name};
+
+        switch ($type) {
+            case 'date':
+                if(!isset($model->{$name})){
+                    return '';
+                }
+                return $model->{$name}->format('Y-m-d');
+                break;
+
+            default:
+                return '';
+                break;
+        }
     }
 }
