@@ -1,0 +1,54 @@
+{
+    "name": "oobook/laravel-form",
+    "type": "library",
+    "license": "MIT",
+    "description": "Form input components for laravel blade",
+    "keywords": [
+        "template",
+        "form",
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "Oğuzhan Bükçüoğlu",
+            "email": "oguz.bukcuoglu@gmail.com"
+        },
+        {
+            "name": "Güneş Bizim",
+            "email": "gunes@olmadikprojeler.com"
+        },
+        {
+            "name": "Hazarcan Doğa Bakan",
+            "email": "doga@olmadikprojeler.com"
+        }
+    ],
+    "require": {
+        "cartalyst/tags": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+        "intervention/image": "^2.7"
+    },
+    "require-dev": {
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OoBook\\LaravelForm\\Providers\\UnusualServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "OoBook\\LaravelForm\\": "src"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    }
+}
