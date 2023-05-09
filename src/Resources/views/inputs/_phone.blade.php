@@ -10,7 +10,7 @@
     @endisset
     <input
         class="form-control {{$class ?? ''}}"
-        type="text"
+        type="tel"
         placeholder="{{ $placeholder ?? ''}}"
         name="{{ $input_name }}"
         value="{{ isset($model) ? $model->getFormInputValue($input_name) : ''}}"
