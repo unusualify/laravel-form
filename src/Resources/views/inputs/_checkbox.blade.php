@@ -1,3 +1,6 @@
+@extends('layouts._template')
+
+@section('input')
 @php
     $checked = (isset($model) ? $model->getFormInputValue($input_name) : '') == '1' ? 'checked' : '';
 @endphp
@@ -17,3 +20,5 @@
     <span class="help-block"></span>
     <label class="custom-control-label" for="{{ $input_name }}_checkbox"> {{ $label }}</label>
 </div>
+
+@endsection

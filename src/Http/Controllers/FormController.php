@@ -21,6 +21,7 @@ class FormController extends Controller
     }
    
     $formData = config('unusualForms');
+    // dd($formData);
     $inputs = $formData[$routeName[0]]['inputs'];
     $view = $routeName[0].'.'.'form';
     foreach($inputs as $input){
