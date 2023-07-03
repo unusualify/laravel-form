@@ -1,3 +1,8 @@
+@extends('unusual_form::layouts._input-template', ['arr' => $arr])
+
+@section('input')
+
+
 @php
     $repeater_id =  mt_rand(100000,999999) . "_repeaterID";
 
@@ -167,3 +172,6 @@
         });
   </script>
 @endpush
+
+
+@endsection

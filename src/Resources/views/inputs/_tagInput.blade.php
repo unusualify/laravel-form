@@ -1,3 +1,6 @@
+@extends('unusual_form::layouts._input-template', ['arr' => $arr])
+
+@section('input')
 @once
     @php
         $tag_route = route('tags.index');
@@ -110,3 +113,6 @@
         $('#' + @json($tag_id)).tagsinput('add', '{{ $tags }}');
   </script>
 @endpush
+
+@endsection
+

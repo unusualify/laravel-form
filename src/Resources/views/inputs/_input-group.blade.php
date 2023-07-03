@@ -20,7 +20,7 @@
             col-xs-{{ $arr['col']['lg'] ? $arr['col']['lg'] : '12' }}
             col-xs-{{ $arr['col']['xl'] ? $arr['col']['xl'] : '12' }}
             col-xs-{{ $arr['col']['xxl'] ? $arr['col']['xxl'] : '12' }}
-            here">
+        ">
             @include('unusual_form::inputs._' . $arr['type'], array_diff_key($arr, array_flip(["type"])))
         </div>
     @endforeach

@@ -1,6 +1,7 @@
 @if(isset($arr['col']) && !$arr['hasParent'])
 
-<div class="col-{{ isset($arr['col']) ? $arr['col']['default'] : '12' }} 
+<div class="col
+              col-{{ isset($arr['col']) ? $arr['col']['default'] : '12' }} 
               col-xs-{{ isset($arr['col']) ? $arr['col']['xs'] : '12' }} 
               col-sm-{{ isset($arr['col']) ? $arr['col']['sm'] : '12' }} 
               col-md-{{ isset($arr['col']) ? $arr['col']['md'] : '12' }} 
@@ -19,7 +20,8 @@
 
 @else
 
-  <div class="col- 12
+  <div class="col
+              col-12
               col-xs-12
               col-sm-12
               col-md-12

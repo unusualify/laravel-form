@@ -1,3 +1,9 @@
+@extends('unusual_form::layouts._input-template', ['arr' => $arr])
+
+
+@section('input')
+
+
 @php
     $select_id =  mt_rand(100000,999999) . "_selectID";
     $item_key = $item_key ?? 'name';
@@ -35,3 +41,6 @@
 </div>
 
 
+
+
+@overwrite

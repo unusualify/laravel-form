@@ -1,3 +1,8 @@
+@extends('unusual_form::layouts._input-template', ['arr' => $arr])
+
+@section('input')
+
+
 @once
     @php
         $preview_route = route('unusual_form.filepond.preview', ['id' => ':id'], false);
@@ -304,3 +309,6 @@
         }
     </script>
 @endpush
+
+
+@endsection

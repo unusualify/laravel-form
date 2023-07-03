@@ -1,3 +1,8 @@
+@extends('unusual_form::layouts._input-template', ['arr' => $arr])
+
+@section('input')
+
+
 @php
     $date_input_id =  "dateID_" . mt_rand(100000,999999);
 
@@ -74,3 +79,6 @@
         </script>
     @endpush
 @endonce
+
+
+@endsection

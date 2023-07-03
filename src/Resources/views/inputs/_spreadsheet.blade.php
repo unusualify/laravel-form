@@ -1,3 +1,9 @@
+@extends('unusual_form::layouts._input-template', ['arr' => $arr])
+
+
+@section('input')
+
+
 @once
     @php
         $spreadSheetTableId = 'spreadSheetTable';
@@ -297,3 +303,6 @@
         })
     </script>
 @endpush
+
+
+@endsection
