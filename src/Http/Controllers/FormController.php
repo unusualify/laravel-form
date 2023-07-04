@@ -11,27 +11,26 @@ class FormController extends Controller
   public function edit(){
     return;
   }
-  public function create(){
-    
-    $routeNotation = $this->getRouteName();
-    $routeNotation = explode('.', $routeNotation);
+  public function create($viewPath){
+    $viewPath = explode('.', $viewPath);
     //exclude routeprefix from routeName if it exists
     if ($this->routePrefix != '') {
-      $routeName = str_replace($this->routePrefix, '', $routeNotation);
+      $routeName = str_replace($this->routePrefix, '', $viewPath);
     }
    
     $formData = config('unusualForms');
-    // dd($formData);
-    // dd($formData);
     $inputs = $formData[$routeName[0]]['inputs'];
-    $view = $routeName[0].'.'.'form';
+    $view = 'auth'.'.'.'form';
     foreach($inputs as $input){
       if(isset($input['placeholder']))
         $input['placeholder'] = __($input['placeholder']);
     }
     return view(
       $view,
-      ['inputs' => $inputs]
+      [
+        'inputs' => $inputs,
+        'formTitle' => $formData[$routeName[0]]['title'],
+      ]
     );
   }
   public function getRouteName(){

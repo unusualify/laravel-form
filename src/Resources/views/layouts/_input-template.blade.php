@@ -7,7 +7,10 @@
               col-md-{{ isset($arr['col']) ? $arr['col']['md'] : '12' }} 
               col-lg-{{ isset($arr['col']) ? $arr['col']['lg'] : '12' }} 
               col-xl-{{ isset($arr['col']) ? $arr['col']['xl'] : '12' }}
-              col-xxl-{{ isset($arr['col']) ? $arr['col']['xxl'] : '12' }} 
+              col-xxl-{{ isset($arr['col']) ? $arr['col']['xxl'] : '12' }}
+              {{ isset($arr['align-center']) ? 'align-items-center' : '' }}
+              {{ isset($arr['justify-center']) ? 'justify-content-center' : '' }}
+
               ">
               {{-- 'xs' => 6, //required if col is used
                     'sm' => 6, //required if col is used
@@ -28,6 +31,8 @@
               col-lg-12
               col-xl-12
               col-xxl-12
+              {{ isset($arr['align-center']) ? 'align-items-center' : '' }}
+              {{ isset($arr['justify-center']) ? 'justify-content-center' : '' }}
               ">
               {{-- 'xs' => 6, //required if col is used
                     'sm' => 6, //required if col is used
