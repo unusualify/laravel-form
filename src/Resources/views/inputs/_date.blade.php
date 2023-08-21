@@ -1,3 +1,8 @@
+@extends('unusual_form::layouts._input-template', ['arr' => $arr])
+
+@section('input')
+
+
 @php
     $date_input_id =  "dateID_" . mt_rand(100000,999999);
 
@@ -13,7 +18,7 @@
     placeholder="{{ $placeholder ?? ''}}"
     {{$props}}
     >
-<span class="help-block"> {{ $help_label ?? '' }} </span>
+<span class="help-block" for="{{ $input_name }}"> {{ $help_label ?? '' }} </span>
 {{-- <p class="help-block"></p> --}}
 
 @once
@@ -74,3 +79,6 @@
         </script>
     @endpush
 @endonce
+
+
+@endsection

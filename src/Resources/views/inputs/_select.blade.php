@@ -1,3 +1,9 @@
+@extends('unusual_form::layouts._input-template', ['arr' => $arr])
+
+
+@section('input')
+
+
 @php
     $select_id =  mt_rand(100000,999999) . "_selectID";
     $item_key = $item_key ?? 'name';
@@ -7,7 +13,7 @@
 @endphp
 
 <label>{{$label}}</label>
-<div class="input-group mb-3 {{ $class ?? '' }}">
+<div class="input-group">
     @isset($prepend_label)
         <div class="input-group-prepend">
             <label class="input-group-text" for="{{ $select_id }}">
@@ -16,22 +22,47 @@
         </div>
     @endisset
     <select
-        class="custom-select {{ $select_class ?? '' }}"
+        {{ $multi ? 'multiple' : '' }}
+        class="custom-select {{ $class ?? '' }}"
         name="{{ $input_name }}"
-        id="{{ $select_id }}"
+        id="{{ $id }}"
         {{$props}}
         >
-        <option value="">Choose One</option>
+        @if(!$multi)
+        <option value="">{{ isset($filler) ?  $filler : 'Choose One' }}</option>
+        @endif
         @foreach($items as $key => $item)
+        
             <option
-                value="{{ $item->{$item_value} }}"
-                @if($item->{$item_value} == $value) selected @endif
-                >
-                {{ $item->{$item_key} }}
+                value="{{ $key }}"
+                {{-- @if($item->{$item_value} == $value) selected @endif--}}
+                > 
+                {{-- @dd($item) --}}
+                {{ $item }}
             </option>
         @endforeach
     </select>
-    <span class="help-block"> {{ $help_label ?? '' }} </span>
+    <span class="help-block" for="{{ $input_name }}"> {{ $help_label ?? '' }} </span>
+    @if($multi)
+        <script>
+            $(function () {
+                var selector = '#' + "{{ $id }}" ;
+                $(selector).filterMultiSelect(
+                    {
+                        'selectionLimit' : 2,
+                        'placeholderText' : 'Choose at least one'
+                    }
+                );
+                $(selector).on('optionselected', function(e) {
+                    //Code here for multiselect listener
+                });
+            });
+        </script>
+    @endif
 </div>
 
+
+
+
+@overwrite
 

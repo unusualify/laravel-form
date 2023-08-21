@@ -7,7 +7,6 @@
         }
     </style>
 @endpush
-
 @push('postscript')
     <script src="{{ asset('assets/extra-libs/jqbootstrapvalidation/validation.js') }}"></script>
     <script>
