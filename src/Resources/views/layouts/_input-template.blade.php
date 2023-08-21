@@ -1,6 +1,6 @@
 @if(isset($arr['col']) && !$arr['hasParent'])
 
-<div class="col
+<div class="  col
               col-{{ isset($arr['col']) ? $arr['col']['default'] : '12' }} 
               col-xs-{{ isset($arr['col']) ? $arr['col']['xs'] : '12' }} 
               col-sm-{{ isset($arr['col']) ? $arr['col']['sm'] : '12' }} 
@@ -23,7 +23,7 @@
 
 @else
 
-  <div class="col
+  {{-- <div class="col
               col-12
               col-xs-12
               col-sm-12
@@ -34,15 +34,17 @@
               {{ isset($arr['align-center']) ? 'align-items-center' : '' }}
               {{ isset($arr['justify-center']) ? 'justify-content-center' : '' }}
               ">
-              {{-- 'xs' => 6, //required if col is used
+              'xs' => 6, //required if col is used
                     'sm' => 6, //required if col is used
                     'md' => 6, //required if col is used
                     'lg' => 6, //required if col is used
                     'xl' => 6, //required if col is used
-                    'xxl' => 6, --}}
+                    'xxl' => 6, 
     @yield('input')
 
-  </div>
+  </div> --}}
+      @yield('input')
+
 
 @endif
 

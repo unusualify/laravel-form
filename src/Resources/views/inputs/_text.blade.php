@@ -4,6 +4,33 @@
 {{-- We should have check if it's floating labeled text field --}}
     @if(isset($floating) && $floating == true)
 
+    @elseif(isset($suffix))
+        @isset($label)
+        <label>{{$label}}</label>
+        @endisset
+        @php
+            $time = time();
+            $suffixVar = '--suffix-'.$time;
+        @endphp
+        <div class="suffix suffix-{{ $time }}" style="{{ $suffixVar }}:'{{ $suffix }}';">
+            <input
+                class="form-control {{$class ?? ''}} "
+                type="text"
+                placeholder="{{ $placeholder ?? ''}}"
+                name="{{ $input_name }}"
+                value="{{ isset($model) ? $model->getFormInputValue($input_name) : ''}}"
+                
+                {{$props}}
+            />
+        <span class="help-block" for="{{ $input_name }}">
+            {{ $help_label ?? '' }}
+        </span>
+        </div>
+        <style>
+            .suffix-{{ $time }}::after{
+                content: var({{ $suffixVar }});
+            }
+        </style>
     @else
         @isset($label)
         <label>{{$label}}</label>
@@ -16,7 +43,7 @@
             value="{{ isset($model) ? $model->getFormInputValue($input_name) : ''}}"
             {{$props}}
             />
-        <span class="help-block">
+        <span class="help-block" for="{{ $input_name }}">
             {{ $help_label ?? '' }}
         </span>
         {{-- <p class="help-block"></p> --}}

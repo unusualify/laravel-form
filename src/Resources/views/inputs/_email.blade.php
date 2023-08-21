@@ -23,7 +23,7 @@
         value="{{ isset($model) ? $model->getFormInputValue($input_name) : ''}}"
         {{$props}}
         />
-    <span class="help-block">
+    <span class="help-block" for="{{ $input_name }}">
         {{ $help_label ?? '' }}
     </span>
     {{-- <p class="help-block"></p> --}}

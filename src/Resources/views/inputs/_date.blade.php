@@ -18,7 +18,7 @@
     placeholder="{{ $placeholder ?? ''}}"
     {{$props}}
     >
-<span class="help-block"> {{ $help_label ?? '' }} </span>
+<span class="help-block" for="{{ $input_name }}"> {{ $help_label ?? '' }} </span>
 {{-- <p class="help-block"></p> --}}
 
 @once

@@ -5,6 +5,7 @@ namespace OoBook\LaravelForm\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Lang;
 use View;
 class UnusualServiceProvider extends ServiceProvider
 {
@@ -24,10 +25,15 @@ class UnusualServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(
             __DIR__ . '/../src/Database/Migrations'
         );
-
+        // $this->loadViewsFrom(__DIR__ . '/views', 'unusual_form');
+      
         $this->bootViews();
 
         $this->extendBlade();
+        $validation = json_encode(Lang::get('validation'));
+        view()->share('validation', $validation);
+
+        
 
     }
 

@@ -2,10 +2,10 @@
 
 @section('input')
 
-<div class="custom-submit">
+{{-- <div class="custom-submit"> --}}
     {{-- <input type="hidden" name="{{ $input_name }}" value="0"> --}}
     <button
-        type="submit"
+        type="{{ isset($button_type) ? $button_type : '' }}"
         class="custom-submit {{ $class ? $class :'' }}"
         name="{{ $input_name }}"
         id="{{ $input_name }}_checkbox"
@@ -15,8 +15,7 @@
         >
         {{ $text }}
     </button>
-    <span class="help-block"></span>
 
-</div>
+{{-- </div> --}}
 
 @overwrite

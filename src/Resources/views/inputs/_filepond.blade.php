@@ -38,7 +38,7 @@
 
             {{-- aria-describedby="{{$input_name}}Addon"  --}}
             >
-        <span class="help-block"></span>
+        <span class="help-block" for="{{ $input_name }}"></span>
 
         {{-- <label class="custom-file-label" for="{{$input_name}}ID">
             {{ $choose_label ?? 'Choose file' }}

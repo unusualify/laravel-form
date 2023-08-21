@@ -15,7 +15,7 @@
         {{ $checked }}
         {{$props ?? ''}}
         >
-    <span class="help-block"></span>
+    <span class="help-block" for="{{ $input_name }}"></span>
     <label class="custom-control-label" for="{{ $input_name }}_checkbox"> {{ $label }}</label>
 
 </div>

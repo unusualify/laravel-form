@@ -3,7 +3,7 @@
 
 
 @php
-    $file_id =  "fileID_" . mt_rand(100000,999999);
+    $input_id =  "inputID_" . mt_rand(100000,999999);
     $value = $model->getFormInputValue( $input_name);
 @endphp
 
@@ -23,34 +23,33 @@
     <input
         class="form-control {{$class ?? ''}}"
         type="tel"
-        id="{{ $file_id }}"
+        id="{{ $input_id }}"
         placeholder="{{ $placeholder ?? ''}}"
         name="{{ $input_name }}"
         value="{{ isset($model) ? $model->getFormInputValue($input_name) : ''}}"
         {{$props}}
         />
-    <span class="help-block">
+    <span class="help-block" for="{{ $input_name }}">
         {{ $help_label ?? '' }}
     </span>
     {{-- <p class="help-block"></p> --}}
-    <script>
+    {{-- <script>
         $( document ).ready(function() {
-            var input = $('#'+'{{ $file_id }}')[0];
-            // window.intlTelInput(input);
-            // window.intlTelInput(input, {
-            //     utilsScript: window.intlUtils, // just for formatting/placeholders etc
-            //     nationalMode: true,
-            //     placeholderNumberType: 'MOBILE',
-            //     initialCountry: "auto",
-            //     nationalMode: true,
-            //     formatOnDisplay: true,
+            var input = $('#'+'{{ $input_id }}')[0];
 
-            // });
-            var input = '{{ $file_id }}';
-            var test = new CustomIntTelInput(input,  ['tr']);
+            var input = '{{ $input_id }}';
+            window[input] = new CustomIntTelInput(input,  {
+                utilsScript: window.intlUtils, // just for formatting/placeholders etc
+                nationalMode: true,
+                placeholderNumberType: 'MOBILE',
+                initialCountry: "auto",
+                nationalMode: true,
+                formatOnDisplay: true,
+
+            });
         });
 
-    </script>
+    </script> --}}
 @endif
 
 @overwrite
