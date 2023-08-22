@@ -60,10 +60,11 @@ class UnusualServiceProvider extends ServiceProvider
      */
     public function bootViews()
     {
-        $sourcePath = __DIR__ .  '/../resources/views';
-
-        $this->loadViewsFrom( $sourcePath, 'unusual_form');
-        $this->publishes([$sourcePath => resource_path('views/vendor/unusual_form')], 'views');
+        $sourcePathBlade = __DIR__ .  '/../resources/views';
+        $sourcePathJS = __DIR__ .  '/../resources/js';
+        $this->loadViewsFrom( $sourcePathBlade, 'unusual_form');
+        $this->publishes([$sourcePathBlade => resource_path('views/vendor/unusual_form')], 'views');
+        $this->publishes([$sourcePathJS => public_path('vendor/unusual_form/js')], 'js');
 
     }
 
