@@ -31,7 +31,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "OoBook\\LaravelForm\\Providers\\UnusualServiceProvider"
+                "Unusualify\\LaravelForm\\Providers\\UnusualServiceProvider"
             ],
             "aliases": {
 
@@ -40,7 +40,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OoBook\\LaravelForm\\": "src"
+            "Unusualify\\LaravelForm\\": "src"
         }
     },
     "minimum-stability": "dev",

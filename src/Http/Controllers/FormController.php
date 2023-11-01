@@ -1,6 +1,6 @@
 <?php
 
-namespace OoBook\LaravelForm\Http\Controllers;
+namespace Unusualify\LaravelForm\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Database\Eloquent\Collection;
@@ -16,9 +16,9 @@ class FormController extends Controller
   public function edit(){
     return;
   }
-  
+
   public function create(){
-    
+
     $formData = config('unusualForms');
     $formData = $formData[$this->formKey];
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace OoBook\LaravelForm\Models\Traits;
+namespace Unusualify\LaravelForm\Models\Traits;
 
-use OoBook\LaravelForm\Facades\FilePond;
-use OoBook\LaravelForm\Services\FilePondManager;
+use Unusualify\LaravelForm\Facades\FilePond;
+use Unusualify\LaravelForm\Services\FilePondManager;
 use Illuminate\Database\Eloquent\Model;
 
 trait HasFilePond

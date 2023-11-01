@@ -1,6 +1,6 @@
 <?php
 
-namespace OoBook\LaravelForm\Providers;
+namespace Unusualify\LaravelForm\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
