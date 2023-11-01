@@ -1,5 +1,5 @@
 {
-    "name": "oobook/laravel-form",
+    "name": "unusualify/laravel-form",
     "type": "library",
     "license": "MIT",
     "description": "Form input components for laravel blade",

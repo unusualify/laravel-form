@@ -26,14 +26,14 @@ class UnusualServiceProvider extends ServiceProvider
             __DIR__ . '/../src/Database/Migrations'
         );
         // $this->loadViewsFrom(__DIR__ . '/views', 'unusual_form');
-      
+
         $this->bootViews();
 
         $this->extendBlade();
         $validation = json_encode(Lang::get('validation'));
         view()->share('validation', $validation);
 
-        
+
 
     }
 
@@ -62,8 +62,11 @@ class UnusualServiceProvider extends ServiceProvider
     {
         $sourcePathBlade = __DIR__ .  '/../resources/views';
         $sourcePathJS = __DIR__ .  '/../resources/js';
+
         $this->loadViewsFrom( $sourcePathBlade, 'unusual_form');
+
         $this->publishes([$sourcePathBlade => resource_path('views/vendor/unusual_form')], 'views');
+
         $this->publishes([$sourcePathJS => public_path('vendor/unusual_form/js')], 'js');
 
     }
