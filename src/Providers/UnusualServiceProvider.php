@@ -60,8 +60,8 @@ class UnusualServiceProvider extends ServiceProvider
      */
     public function bootViews()
     {
-        $sourcePathBlade = __DIR__ .  '/../resources/views';
-        $sourcePathJS = __DIR__ .  '/../resources/js';
+        $sourcePathBlade = __DIR__ .  '/../Resources/views';
+        $sourcePathJS = __DIR__ .  '/../Resources/js';
 
         $this->loadViewsFrom( $sourcePathBlade, 'unusual_form');
 
