@@ -4,7 +4,8 @@
 
 @php
     $input_id =  "inputID_" . mt_rand(100000,999999);
-    $value = $model->getFormInputValue( $input_name);
+    if(isset($model))
+        $value = $model->getFormInputValue( $input_name);
 @endphp
 
 

@@ -2,7 +2,9 @@
     const validationMsg = {!! $validation ?? 'null' !!};
 </script>
 {{-- @dd(json_decode($validation)) --}}
+{{-- @dd($formData) --}}
 @if(key_exists('inputs', $formData))
+
     <form class="form-group row {{ isset($formData['class']) ? $formData['class'] : ''  }}">
         @isset($formData['title'])
             @if(isset($formData['title']['type']))

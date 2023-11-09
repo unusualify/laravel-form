@@ -65,7 +65,7 @@ class UnusualServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom( $sourcePathBlade, 'unusual_form');
 
-        $this->publishes([$sourcePathBlade => resource_path('views/vendor/unusual_form')], 'views');
+        $this->publishes([$sourcePathBlade => resource_path('views/vendor/')], 'views');
 
         $this->publishes([$sourcePathJS => public_path('vendor/unusual_form/js')], 'js');
 
@@ -110,8 +110,6 @@ class UnusualServiceProvider extends ServiceProvider
     {
         // dd($view, $expression);
         [$name] = str_getcsv($expression, ',', '\'');
-
-
         if (preg_match('/::/', $name)) {
             // if there's a namespace separator, we'll assume it's a package
             [$namespace, $name] = preg_split('/::/', $name);

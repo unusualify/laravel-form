@@ -1,7 +1,7 @@
 @extends('unusual_form::layouts._input-template')
 
 @section('input')
-
+{{-- @dd($config->form) --}}
 {{-- <div class="custom-submit"> --}}
     {{-- <input type="hidden" name="{{ $input_name }}" value="0"> --}}
     <button
