@@ -10,6 +10,7 @@ final class LaravelServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishMigrations();
+        $this->publishJs();
     }
 
     private function publishMigrations(): void
@@ -25,5 +26,10 @@ final class LaravelServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../vite/dist' => public_path(),
         ], 'assets');
+    }
+    public function publishJs(): void
+    {
+        $sourcePathJS = __DIR__ .  '/../resources/js';
+        $this->publishes([$sourcePathJS => public_path('vendor/unusual_form/js')], 'js');
     }
 }
