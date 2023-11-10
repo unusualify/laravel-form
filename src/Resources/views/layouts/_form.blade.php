@@ -1,5 +1,6 @@
 <script>
-    const validationMsg = {!! $validation ?? 'null' !!};
+    let validationMsg = {!! $validation ?? 'null' !!};
+    
 </script>
 {{-- @dd(json_decode($validation)) --}}
 {{-- @dd($formData) --}}
