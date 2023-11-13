@@ -160,5 +160,4 @@ class UnusualServiceProvider extends ServiceProvider
 
     }
 
-
 }

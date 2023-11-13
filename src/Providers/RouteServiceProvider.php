@@ -49,4 +49,5 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group( __DIR__ . '/../Routes/web.php');
     }
+
 }
