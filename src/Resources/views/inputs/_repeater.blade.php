@@ -19,7 +19,7 @@
 
 <div class="card">
     <div class="card-header">
-        <strong>{{ $label }}</strong> <small>Form</small>
+        <strong>{!! $label !!}</strong> <small>Form</small>
     </div>
     <div class="card-body" id="{{ $repeater_id }}">
         <div class="container">

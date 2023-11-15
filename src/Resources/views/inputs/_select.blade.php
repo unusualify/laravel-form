@@ -12,7 +12,7 @@
     $value = isset($model) ? $model->getFormInputValue($input_name) : ''
 @endphp
 
-<label>{{$label}}</label>
+<label>{!! $label !!}</label>
 <div class="input-group">
     @isset($prepend_label)
         <div class="input-group-prepend">

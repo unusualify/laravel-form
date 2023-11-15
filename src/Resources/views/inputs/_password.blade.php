@@ -6,7 +6,7 @@
 
     @else
         @isset($label)
-        <label for="{{ $input_name }}">{{ $label }}</label>
+        <label for="{{ $input_name }}">{!! $label !!}</label>
         @endisset
         <div class="position-relative">
             <input

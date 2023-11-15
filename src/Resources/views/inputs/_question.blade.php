@@ -3,7 +3,7 @@
 @section('input')
 
 <div class="question container">
-  <label class="" for="{{ $input_name }}"> {{ $label }}</label>
+  <label class="" for="{{ $input_name }}"> {!! $label !!}</label>
   <input type="text" class="" placeholder="{{ $placeholder }}" name="{{ $input_name }}">
   <span class="help-block" for="{{ $input_name }}"></span>
 </div>

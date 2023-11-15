@@ -13,7 +13,7 @@
 
 @else
     @isset($label)
-    <label>{{$label}}</label>
+    <label>{!! $label !!}</label>
     @endisset
     <input
         class="form-control {{$class ?? ''}}"

@@ -2,7 +2,7 @@
 
 @section('input')
 @isset($label)
-<label>{{$label}}</label>
+<label>{!! $label !!}</label>
 
 @endisset
 <textarea

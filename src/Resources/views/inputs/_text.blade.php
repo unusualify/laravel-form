@@ -6,7 +6,7 @@
 
     @elseif(isset($suffix))
         @isset($label)
-        <label>{{$label}}</label>
+        <label>{!! $label !!}</label>
         @endisset
         @php
             $time = time();
@@ -33,7 +33,7 @@
         </style>
     @else
         @isset($label)
-        <label>{{$label}}</label>
+        <label>{!! $label !!}</label>
         @endisset
         <input
             class="form-control {{$class ?? ''}}"

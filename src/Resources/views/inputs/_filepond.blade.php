@@ -19,7 +19,7 @@
 
 @endphp
 
-<label>{{$label}}</label>
+<label>{!! $label !!}</label>
 <div
     class="mb-3 {{ $class ?? ''}}"
     >

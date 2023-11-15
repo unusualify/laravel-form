@@ -16,7 +16,7 @@
         {{$props ?? ''}}>
   <span class="slider"></span>
   @foreach ($labels as $label)
-      <span class="p-absolute {{ $loop->first ? 'left-label' : 'right-label'}}">{{ $label }}</span>
+      <span class="p-absolute {{ $loop->first ? 'left-label' : 'right-label'}}">{!! $label !!}</span>
   @endforeach
 </label>
 @overwrite

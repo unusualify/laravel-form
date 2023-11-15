@@ -23,7 +23,7 @@
 
 @endphp
 
-<label>{{$label}}</label>
+<label>{!! $label !!}</label>
 <div class="input-group mb-3 {{ $class ?? '' }}">
     <input class="{{$class ?? ''}}"
         type="text"
