@@ -5,8 +5,8 @@
 {{-- @dd(json_decode($validation)) --}}
 {{-- @dd($formData) --}}
 @if(key_exists('inputs', $formData))
-
-    <form class="form-group row {{ isset($formData['class']) ? $formData['class'] : ''  }}">
+    @dd('here')
+    <form class="form-group row {{ isset($formData['class']) ? $formData['class'] : ''  }}" id="{{ isset($formData['id']) ? $formData['id'] : ''  }}">
         @isset($formData['title'])
             @if(isset($formData['title']['type']))
                 <{{ $formData['title']['type'] }} 
@@ -30,7 +30,7 @@
     </form>
 
 @elseif(key_exists('steps',$formData))
-        <form class="form-group row {{ isset($formData['class']) ? $formData['class'] : ''  }}">
+        <form class="form-group row {{ isset($formData['class']) ? $formData['class'] : ''  }}" id="{{ isset($formData['id']) ? $formData['id'] : ''  }}">
             @foreach($formData['steps'] as $forms)
                 <div class="form-step step-{{ $loop->index }} {{ $loop->index === 0 ? 'active' : '' }}">
                 @isset($forms['title'])
@@ -59,7 +59,7 @@
 @else
 
     @foreach ($formData as $forms)
-        <form class="form-group row form-step step-{{ $loop->index }}">
+        <form class="form-group row form-step step-{{ $loop->index }}" id="{{ isset($formData['id']) ? $formData['id'] : ''  }}">
             @isset($forms['title'])
             @if(isset($forms['title']['type']))
                 <{{ $forms['title']['type'] }} 
