@@ -5,7 +5,6 @@
 {{-- @dd(json_decode($validation)) --}}
 {{-- @dd($formData) --}}
 @if(key_exists('inputs', $formData))
-    @dd('here')
     <form class="form-group row {{ isset($formData['class']) ? $formData['class'] : ''  }}" id="{{ isset($formData['id']) ? $formData['id'] : ''  }}">
         @isset($formData['title'])
             @if(isset($formData['title']['type']))
