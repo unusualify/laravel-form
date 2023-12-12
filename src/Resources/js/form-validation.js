@@ -82,14 +82,14 @@ class ValidateForm {
         if (val == '') {
           valid = false;
           if (showMessage)
-            this.showErrorMessage(name, 'filled')
+            this.showErrorMessage(name, 'filled',el)
         }
         break;
       case 'email':
         if (!this.rules['isEmail'](val)) {
           valid = false;
           if (showMessage)
-            this.showErrorMessage(name, 'email')
+            this.showErrorMessage(name, 'filled', el)
         }
         break;
       case 'tel':
@@ -102,14 +102,14 @@ class ValidateForm {
           // console.log('Phone is not valid')
           valid = false;
           if (showMessage)
-            this.showErrorMessage(name, 'phone')
+            this.showErrorMessage(name, 'phone', el)
         }
         break;
       case 'checkbox':
         if (!this.rules['isCheckboxValid'](el)) {
           valid = false;
           if (showMessage)
-            this.showErrorMessage(name, 'accepted');
+            this.showErrorMessage(name, 'accepted', el);
         }
         break;
       default:
@@ -125,10 +125,10 @@ class ValidateForm {
   enableSubmit(form) {
     $(form).find('input[type=submit]').removeAttr('disabled')
   }
-  showErrorMessage(name, messageKey = "") {
+  showErrorMessage(name, messageKey = "", el) {
     const message = this.getErrorMessage(name, messageKey);
     if (message != '') {
-      $(`.help-block[for="${name}"]`).html(message);
+      $(this.form).find(`.help-block[for="${name}"]`).html(message);
     }
     $(`.help-block[for="${name}"]`).show();
   }
