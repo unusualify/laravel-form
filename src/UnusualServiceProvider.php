@@ -1,13 +1,13 @@
 <?php
 
-namespace Unusualify\LaravelForm\Providers;
-
+namespace Unusualify\LaravelForm;
+use Unusualify\LaravelForm\Providers\RouteServiceProvider;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Lang;
 use View;
-class UnusualServiceProvider extends ServiceProvider
+class LaravelServiceProvider extends ServiceProvider
 {
 
     protected $providers = [
@@ -32,9 +32,6 @@ class UnusualServiceProvider extends ServiceProvider
         $this->extendBlade();
         $validation = json_encode(Lang::get('validation'));
         view()->share('validation', $validation);
-
-
-
     }
 
     /**
@@ -158,6 +155,11 @@ class UnusualServiceProvider extends ServiceProvider
             return $this->includeView('layouts._', "'form'," . $expression);
         });
 
+    }
+    public function publishJs(): void
+    {
+        $sourcePathJS = __DIR__ .  '/../resources/js';
+        $this->publishes([$sourcePathJS => public_path('vendor/unusual_form/js')], 'js');
     }
 
 }
