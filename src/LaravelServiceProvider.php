@@ -156,10 +156,6 @@ class LaravelServiceProvider extends ServiceProvider
         });
 
     }
-    public function publishJs(): void
-    {
-        $sourcePathJS = __DIR__ .  '/../resources/js';
-        $this->publishes([$sourcePathJS => public_path('vendor/unusual_form/js')], 'js');
-    }
+
 
 }
