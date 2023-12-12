@@ -57,8 +57,8 @@ class LaravelServiceProvider extends ServiceProvider
      */
     public function bootViews()
     {
-        $sourcePathBlade = __DIR__ .  '/../Resources/views';
-        $sourcePathJS = __DIR__ .  '/../Resources/js';
+        $sourcePathBlade = __DIR__ .  '/Resources/views';
+        $sourcePathJS = __DIR__ .  '/Resources/js';
 
         $this->loadViewsFrom( $sourcePathBlade, 'unusual_form');
 
