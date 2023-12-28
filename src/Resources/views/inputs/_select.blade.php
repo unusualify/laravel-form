@@ -12,12 +12,12 @@
     $value = isset($model) ? $model->getFormInputValue($input_name) : ''
 @endphp
 
-<label>{!! $label !!}</label>
+<label>{!! __($label) !!}</label>
 <div class="input-group">
     @isset($prepend_label)
         <div class="input-group-prepend">
             <label class="input-group-text" for="{{ $select_id }}">
-                {{ $prepend_label }}
+                {{ __($prepend_label) }}
             </label>
         </div>
     @endisset
@@ -38,7 +38,7 @@
                 {{-- @if($item->{$item_value} == $value) selected @endif--}}
                 > 
                 {{-- @dd($item) --}}
-                {{ $item }}
+                {{ __($item) }}
             </option>
         @endforeach
     </select>

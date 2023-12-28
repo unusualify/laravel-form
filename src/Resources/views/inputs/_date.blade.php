@@ -7,7 +7,7 @@
     $date_input_id =  "dateID_" . mt_rand(100000,999999);
 
 @endphp
-<label>{!! $label !!}</label>
+<label>{!! __($label) !!}</label>
 <input
     type="date"
     class="form-control {{$class ?? ''}}"

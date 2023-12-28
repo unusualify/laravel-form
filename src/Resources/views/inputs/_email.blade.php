@@ -13,12 +13,12 @@
 
 @else
     @isset($label)
-    <label>{!! $label !!}</label>
+    <label>{!! __($label) !!}</label>
     @endisset
     <input
         class="form-control {{$class ?? ''}}"
         type="email"
-        placeholder="{{ $placeholder ?? ''}}"
+        placeholder="{{ __($placeholder) ?? ''}}"
         name="{{ $input_name }}"
         value="{{ isset($model) ? $model->getFormInputValue($input_name) : ''}}"
         {{$props}}

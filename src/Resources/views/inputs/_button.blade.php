@@ -13,7 +13,7 @@
         {{ $checked ?? '' }}
         {{$props ?? ''}}
         >
-        {{ $text }}
+        {{ __($text) }}
     </button>
 
 {{-- </div> --}}
