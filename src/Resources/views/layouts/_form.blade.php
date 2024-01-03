@@ -10,12 +10,12 @@
             @if(isset($formData['title']['type']))
                 <{{ $formData['title']['type'] }} 
                 class="{{ isset($formData['title']['class']) ? $formData['title']['class'] : '' }}">
-                {{ $formData['title']['content'] }}
+                {{ __($formData['title']['content']) }}
                 </{{ $formData['title']['type'] }}>
 
             @else
                 <h2 class="{{ isset($formData['title']['class']) ? $formData['title']['class'] : '' }}">
-                    {{ $formData['title']['content'] }}
+                    {{ __($formData['title']['content']) }}
                 </h2>
         
             @endif

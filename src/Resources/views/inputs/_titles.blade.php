@@ -1,5 +1,5 @@
 
     <{{ $tag }} 
     class="{{ $class }}">
-    {!! $content !!}
+    {!! __($content) !!}
     </{{ $tag }}>
