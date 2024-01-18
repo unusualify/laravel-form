@@ -82,7 +82,7 @@ class ValidateForm {
         if (val == '') {
           valid = false;
           if (showMessage)
-            this.showErrorMessage(name, 'filled',el)
+            this.showErrorMessage(name, 'filled', el)
         }
         break;
       case 'email':
@@ -94,16 +94,14 @@ class ValidateForm {
         break;
       case 'tel':
         let phoneCheck = this.rules['isPhoneValid'](intlInputObj);
-        if (phoneCheck[0]) {
-          // if (phoneCheck[1] == intlTelInputUtils.validationError.TOO_SHORT){
-          //   console.log('test')
-          // }
-
-          // console.log('Phone is not valid')
-          valid = false;
-          if (showMessage)
-            this.showErrorMessage(name, 'phone', el)
+        if (Array.isArray(phoneCheck)) {
+          if (!phoneCheck[0]) {
+            valid = false;
+            if (showMessage)
+              this.showErrorMessage(name, 'phone', el)
+          }
         }
+
         break;
       case 'checkbox':
         if (!this.rules['isCheckboxValid'](el)) {
@@ -147,6 +145,7 @@ class ValidateForm {
     this.step = step;
   }
   getErrorMessage(name, messageKey) {
+
     let message = this.messages[messageKey];
     if (messageKey == 'phone') {
       message = this.messages['custom'][messageKey]
