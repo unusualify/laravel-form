@@ -27,6 +27,7 @@
         name="{{ $input_name }}"
         id="{{ $id }}"
         {{$props}}
+        type="select"
         >
         @if(!$multi)
         <option value="">{{ isset($filler) ?  $filler : 'Choose One' }}</option>

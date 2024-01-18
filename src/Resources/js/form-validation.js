@@ -10,8 +10,14 @@ class ValidateForm {
         let regex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
         return regex.test(email);
       },
+      'isSelectValid': function (option) {
+        if (option == '')
+          return false;
+        else
+          return true;
+      },
       'isTextValid': function (text) {
-        if (val == '')
+        if (text == '')
           return false;
       },
       'isCheckboxValid': function (checkbox) {
@@ -60,7 +66,7 @@ class ValidateForm {
       item = this.step;
     let isValidForm = true;
 
-    $(item).find('input:not([type="submit"])[required], textarea[required]').each((i, el) => {
+    $(item).find('input:not([type="submit"])[required], textarea[required], select[required]').each((i, el) => {
       if (el.hasAttribute('required')
       ) {
         let _valid = this.validateInput(el, intlInputObj);
@@ -110,6 +116,13 @@ class ValidateForm {
             this.showErrorMessage(name, 'accepted', el);
         }
         break;
+      case 'select':
+        if (!this.rules['isSelectValid']($(el).val())) {
+          valid = false;
+          if (showMessage)
+            this.showErrorMessage(name, 'accepted', el);
+        }
+        break;
       default:
         break;
     }
@@ -124,6 +137,7 @@ class ValidateForm {
     $(form).find('input[type=submit]').removeAttr('disabled')
   }
   showErrorMessage(name, messageKey = "", el) {
+
     const message = this.getErrorMessage(name, messageKey);
     if (message != '') {
       $(this.form).find(`.help-block[for="${name}"]`).html(message);
