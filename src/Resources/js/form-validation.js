@@ -16,6 +16,7 @@ class ValidateForm {
         else
           return true;
       },
+      
       'isTextValid': function (text) {
         if (text == '')
           return false;
