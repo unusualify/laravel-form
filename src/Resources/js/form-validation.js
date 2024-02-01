@@ -1,10 +1,11 @@
 class ValidateForm {
 
-  constructor(form = null, step = null, messages) {
+  constructor(form = null, step = null, messages, countryCode) {
     this.form = form;
     this.step = step;
     this.messages = messages;
     this.phones = [];
+    this.countryCode = countryCode;
     this.rules = {
       'isEmail': function (email) {
         let regex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
@@ -16,7 +17,6 @@ class ValidateForm {
         else
           return true;
       },
-      
       'isTextValid': function (text) {
         if (text == '')
           return false;
@@ -106,6 +106,15 @@ class ValidateForm {
             valid = false;
             if (showMessage)
               this.showErrorMessage(name, 'phone', el)
+          }
+        } else if (phoneCheck) {
+          if (this.countryCode) {
+            let countryCodeInput = $("<input>")
+              .attr("type", "hidden")
+              .attr("name", "country_name").val(intlInputObj[0].getSelectedCountryData().name);
+            $(this.form).append(countryCodeInput);
+            valid = true;
+            // intlInputObj[0].getSelectedCountryData().name
           }
         }
 
