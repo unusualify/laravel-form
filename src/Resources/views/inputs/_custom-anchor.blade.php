@@ -5,7 +5,7 @@
 @section('input')
 <div class="{{ $class ? $class : '' }}">
   <a href="{{ $link ? $link : ''}}">
-    {{ $text ? $text : '' }}
+    {!! $text ? $text : '' !!}
   </a>
 </div>
 
