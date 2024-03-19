@@ -1,12 +1,14 @@
 <?php
 
 namespace Unusualify\LaravelForm;
+
 use Unusualify\LaravelForm\Providers\RouteServiceProvider;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Lang;
 use View;
+
 class LaravelServiceProvider extends ServiceProvider
 {
 
@@ -21,7 +23,6 @@ class LaravelServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // dd('here');
         $this->loadMigrationsFrom(
             __DIR__ . '/../src/Database/Migrations'
         );
@@ -47,7 +48,6 @@ class LaravelServiceProvider extends ServiceProvider
         $this->macros();
 
         $this->registerProviders();
-
     }
 
     /**
@@ -60,12 +60,11 @@ class LaravelServiceProvider extends ServiceProvider
         $sourcePathBlade = __DIR__ .  '/Resources/views';
         $sourcePathJS = __DIR__ .  '/Resources/js';
 
-        $this->loadViewsFrom( $sourcePathBlade, 'unusual_form');
+        $this->loadViewsFrom($sourcePathBlade, 'unusual_form');
 
         $this->publishes([$sourcePathBlade => resource_path('views/vendor/')], 'views');
 
         $this->publishes([$sourcePathJS => public_path('vendor/unusual_form/js')], 'js');
-
     }
 
     /**
@@ -84,7 +83,7 @@ class LaravelServiceProvider extends ServiceProvider
      */
     private function registerHelpers()
     {
-        foreach (glob( __DIR__ . '/../Helpers/*.php') as $file) {
+        foreach (glob(__DIR__ . '/../Helpers/*.php') as $file) {
             require_once $file;
         }
     }
@@ -94,7 +93,6 @@ class LaravelServiceProvider extends ServiceProvider
      */
     private function macros()
     {
-
     }
 
     /**
@@ -154,8 +152,5 @@ class LaravelServiceProvider extends ServiceProvider
         $blade->directive('unusualForm', function ($expression) {
             return $this->includeView('layouts._', "'form'," . $expression);
         });
-
     }
-
-
 }

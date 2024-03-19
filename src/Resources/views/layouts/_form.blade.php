@@ -5,7 +5,7 @@
 {{-- @dd(json_decode($validation)) --}}
 {{-- @dd($formData) --}}
 @if(key_exists('inputs', $formData))
-    <form class="form-group row {{ isset($formData['class']) ? $formData['class'] : ''  }}" id="{{ isset($formData['id']) ? $formData['id'] : ''  }}" action="{{ isset($formData['action']) ? $formData['action'] : '' }}">
+    <form class="form-group row {{ isset($formData['class']) ? $formData['class'] : ''  }}" id="{{ isset($formData['id']) ? $formData['id'] : ''  }}" action="{{ isset($formData['action']) ? $formData['action'] : '' }}" method="{{ isset($formData['method']) ? $formData['method'] : 'POST' }}">
         @isset($formData['title'])
             @if(isset($formData['title']['type']))
                 <{{ $formData['title']['type'] }} 
