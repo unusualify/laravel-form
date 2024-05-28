@@ -49,7 +49,7 @@
                 var selector = '#' + "{{ $id }}" ;
                 $(selector).filterMultiSelect(
                     {
-                        'selectionLimit' : 2,
+                        'selectionLimit' : {{ $selectionLimit }},
                         'placeholderText' : 'Choose at least one'
                     }
                 );
