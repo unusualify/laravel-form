@@ -1,6 +1,6 @@
 <?php
 
-namespace OoBook\LaravelForm\Providers;
+namespace Unusualify\LaravelForm\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'OoBook\LaravelForm\Http\Controllers';
+    protected $namespace = 'Unusualify\LaravelForm\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -47,6 +47,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware('web')
              ->namespace($this->namespace)
-             ->group( __DIR__ . '/../routes/web.php');
+             ->group( __DIR__ . '/../Routes/web.php');
     }
+
 }

@@ -1,5 +1,5 @@
 {
-    "name": "oobook/laravel-form",
+    "name": "unusualify/laravel-form",
     "type": "library",
     "license": "MIT",
     "description": "Form input components for laravel blade",
@@ -23,16 +23,15 @@
         }
     ],
     "require": {
-        "cartalyst/tags": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+        "php": ">=7.4",
+        "cartalyst/tags": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0|^13.0",
         "intervention/image": "^2.7"
     },
-    "require-dev": {
-
-    },
+    "require-dev": {},
     "extra": {
         "laravel": {
             "providers": [
-                "OoBook\\LaravelForm\\Providers\\UnusualServiceProvider"
+                "Unusualify\\LaravelForm\\LaravelServiceProvider"
             ],
             "aliases": {
 
@@ -41,7 +40,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OoBook\\LaravelForm\\": "src"
+            "Unusualify\\LaravelForm\\": "src"
         }
     },
     "minimum-stability": "dev",

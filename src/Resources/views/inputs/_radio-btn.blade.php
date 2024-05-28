@@ -8,7 +8,7 @@
   @foreach ($buttons as $button)
     <div class="single-radio-container">
         <label for="{{ $button['id']}}" class="custom-radio-container">
-          {{ $button['label'] }}
+          {{ __($button['label']) }}
           <input type="radio" name="{{ $input_name }}" id="{{ $button['id']}}" value="{{ $button['value'] }}" {{ $button['checked'] === true ? "checked=checked" : '' }}>
           <span class="custom-radio">
 

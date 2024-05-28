@@ -1,6 +1,6 @@
 <?php
 
-namespace OoBook\LaravelForm\Facades;
+namespace Unusualify\LaravelForm\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

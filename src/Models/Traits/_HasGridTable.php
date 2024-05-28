@@ -1,6 +1,6 @@
 <?php
 
-namespace OoBook\LaravelForm\Models\Traits;
+namespace Unusualify\LaravelForm\Models\Traits;
 
 use Illuminate\Support\Str;
 

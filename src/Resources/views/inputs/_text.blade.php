@@ -6,7 +6,7 @@
 
     @elseif(isset($suffix))
         @isset($label)
-        <label>{{$label}}</label>
+        <label>{!! __($label) !!}</label>
         @endisset
         @php
             $time = time();
@@ -16,7 +16,7 @@
             <input
                 class="form-control {{$class ?? ''}} "
                 type="text"
-                placeholder="{{ $placeholder ?? ''}}"
+                placeholder="{{ __($placeholder) ?? ''}}"
                 name="{{ $input_name }}"
                 value="{{ isset($model) ? $model->getFormInputValue($input_name) : ''}}"
                 
@@ -33,12 +33,12 @@
         </style>
     @else
         @isset($label)
-        <label>{{$label}}</label>
+        <label>{!! __($label) !!}</label>
         @endisset
         <input
             class="form-control {{$class ?? ''}}"
             type="text"
-            placeholder="{{ $placeholder ?? ''}}"
+            placeholder="{{ __($placeholder) ?? ''}}"
             name="{{ $input_name }}"
             value="{{ isset($model) ? $model->getFormInputValue($input_name) : ''}}"
             {{$props}}

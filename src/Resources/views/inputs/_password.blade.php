@@ -6,13 +6,13 @@
 
     @else
         @isset($label)
-        <label for="{{ $input_name }}">{{ $label }}</label>
+        <label for="{{ $input_name }}">{!! __($label) !!}</label>
         @endisset
         <div class="position-relative">
             <input
                 class="form-control {{$class ?? ''}} {{ $confirm ? 'confirm-control' : '' }}"
                 type="password"
-                placeholder="{{ $placeholder ?? ''}}"
+                placeholder="{{ __($placeholder) ?? ''}}"
                 name="{{ $input_name }}"
                 id="password_id"
                 maxlength="20"

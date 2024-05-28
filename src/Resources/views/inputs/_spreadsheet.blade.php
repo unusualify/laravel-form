@@ -22,7 +22,7 @@
 @endphp
 
 <label  class="form-label">
-    {{$label}}
+    {!! $label !!}
 </label>
 <div class="input-group mb-3">
     {{-- <div class="input-group-prepend">

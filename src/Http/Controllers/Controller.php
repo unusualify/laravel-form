@@ -1,6 +1,6 @@
 <?php
 
-namespace OoBook\LaravelForm\Http\Controllers;
+namespace Unusualify\LaravelForm\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;

@@ -1,9 +1,9 @@
 <?php
 
-namespace OoBook\LaravelForm\Http\Controllers;
+namespace Unusualify\LaravelForm\Http\Controllers;
 
 use Illuminate\Http\Request;
-use OoBook\LaravelForm\Services\FilePondManager;
+use Unusualify\LaravelForm\Services\FilePondManager;
 
 
 class FilePondController extends Controller

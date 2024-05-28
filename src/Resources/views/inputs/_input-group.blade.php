@@ -13,18 +13,17 @@
         @php
             $arr = array_merge($arr, ['hasParent' => true]);
         @endphp
-        
         {{-- @dd($arr) --}}
-            
-            <div class="
+        {{-- @dd($arr['col']['xs']) --}}
+            <div class=" 
                 col
-                col-{{ $arr['col'] ? $arr['col']['default'] : '12' }} 
-                col-xs-{{ $arr['col']['xs'] ? $arr['col']['xs'] : '12' }}
-                col-sm-{{ $arr['col']['sm'] ? $arr['col']['sm'] : '12' }}
-                col-xs-{{ $arr['col']['md'] ? $arr['col']['md'] : '12' }}
-                col-xs-{{ $arr['col']['lg'] ? $arr['col']['lg'] : '12' }}
-                col-xs-{{ $arr['col']['xl'] ? $arr['col']['xl'] : '12' }}
-                col-xs-{{ $arr['col']['xxl'] ? $arr['col']['xxl'] : '12' }}
+                col-{{ isset($arr['col']) && is_array($arr['col']) ? $arr['col']['default'] : 'auto' }} 
+                col-xs-{{ isset($arr['col']['xs']) && is_array($arr['col']) ? $arr['col']['xs'] : 'auto' }}
+                col-sm-{{ isset($arr['col']['sm']) && is_array($arr['col']) ? $arr['col']['sm'] : 'auto' }}
+                col-xs-{{ isset($arr['col']['md']) && is_array($arr['col']) ? $arr['col']['md'] : 'auto' }}
+                col-xs-{{ isset($arr['col']['lg']) && is_array($arr['col']) ? $arr['col']['lg'] : 'auto' }}
+                col-xs-{{ isset($arr['col']['xl']) && is_array($arr['col']) ? $arr['col']['xl'] : 'auto' }}
+                col-xs-{{ isset($arr['col']['xxl']) && is_array($arr['col']) ? $arr['col']['xxl'] : 'auto' }}
                 {{ isset($arr['align-items']) ? 'align-items-'.$arr['align-items']: '' }}
                 {{ isset($arr['justify-content']) ? 'justify-content-'.$arr['justify-content'] : '' }}
             ">

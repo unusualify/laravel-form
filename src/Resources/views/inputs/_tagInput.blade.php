@@ -23,11 +23,11 @@
 
 @endphp
 
-<label>{{$label}}</label>
+<label>{!! __($label) !!}</label>
 <div class="input-group mb-3 {{ $class ?? '' }}">
     <input class="{{$class ?? ''}}"
         type="text"
-        placeholder="{{ $placeholder ?? '' }}"
+        placeholder="{{ __($placeholder) ?? '' }}"
         name="{{ $input_name }}"
         id="{{ $tag_id }}"
         data-role="tagsinput"

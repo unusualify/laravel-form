@@ -2,14 +2,14 @@
 
 @section('input')
 @isset($label)
-<label>{{$label}}</label>
+<label>{!! __($label) !!}</label>
 
 @endisset
 <textarea
     type="text"
     name="{{ $input_name }}"
     class="form-control {{$class??''}}"
-    placeholder="{{ $placeholder ?? ''}}"
+    placeholder="{{ __($placeholder) ?? ''}}"
     id=""
     rows="2"
     {{$props}}
