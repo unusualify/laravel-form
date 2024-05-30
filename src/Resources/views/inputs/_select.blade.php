@@ -24,7 +24,7 @@
     <select
         {{ $multi ? 'multiple' : '' }}
         class="custom-select {{ $class ?? '' }}"
-        name="{{ $input_name }}"
+        name="{{ $input_name }} {{ $multi ? '[]' : '' }}"
         id="{{ $id }}"
         {{$props}}
         type="select"
