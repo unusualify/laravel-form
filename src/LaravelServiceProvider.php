@@ -62,7 +62,7 @@ class LaravelServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom($sourcePathBlade, 'unusual_form');
 
-        $this->publishes([$sourcePathBlade => resource_path('views/vendor/')], 'views');
+        $this->publishes([$sourcePathBlade => resource_path('views/vendor/unusual_form/')], 'views');
 
         $this->publishes([$sourcePathJS => public_path('vendor/unusual_form/js')], 'js');
     }
